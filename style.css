@@ -1,0 +1,33 @@
+html {
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+.ok {
+  pointer-events: none;
+}
+.navbar-brand {
+  user-select: none;
+  cursor: pointer;
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #a2d9ff;
+  user-select: none;
+}
+
+#project {
+  background-color: #a2d9ff;
+}
+
+section {
+  padding-top: 6rem;
+}
+#bottom {
+  margin-right: auto;
+}
+
+/* .inp {
+  margin-bottom: 0rem;
+} */
