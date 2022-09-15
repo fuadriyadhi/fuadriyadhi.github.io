@@ -153,6 +153,10 @@
               <strong>Thank You!</strong> we have received your message.
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            <div class="alert alert-danger alert-dismissible fade show d-none my-alert warn" role="alert">
+              <strong>Please Input Your Name!</strong> we haven't received your message.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             <form name="submit-to-google-sheet">
               <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -211,9 +215,15 @@
       const btnKirim = document.querySelector(".btn-kirim");
       const btnLoading = document.querySelector(".btn-loading");
       const myAlert = document.querySelector(".my-alert");
+      const warn = document.querySelector(".warn");
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
+        let name = e.target.name.value;
+        if (name == "") {
+          warn.classList.toggle("d-none");
+          return;
+        }
         //ketika tombol submit diklik
         //tampilkan tombol loading, hilangkan tombol kirim
         btnLoading.classList.toggle("d-none");
@@ -227,7 +237,6 @@
             myAlert.classList.toggle("d-none");
             //reset form
             form.reset();
-            console.log("Success!", response);
           })
           .catch((error) => console.error("Error!", error.message));
       });
