@@ -7,7 +7,7 @@
     <meta name="description" content="m=My Personal Web" />
     <meta name="og:title" content="My Portfolio | Fuad Riyadhi" />
     <meta name="og:description" content="Welcome to My Web" />
-    <meta name="og:image" content="fuad.jpg/300" />
+    <meta name="og:image" content="./fuad.jpg/300" />
     <link rel="stylesheet" href="style.css" />
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
-    <link rel="icon" href="./profile-pic.png">
+    <link rel="icon" href="./assets/profile-pic.png" />
     <title>My Portfolio | Fuad Riyadhi</title>
   </head>
   <body id="home">
@@ -40,7 +40,7 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-      <img id="header" src="profile.jpg" alt="Fuad Riyadhi" class="ok rounded-circle" />
+      <img id="header" src="./assets/profile.jpg" alt="Fuad Riyadhi" class="ok rounded-circle" />
       <h1 class="display-4">Fuad Riyadhi</h1>
       <p class="lead">Student | Web Dev</p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -177,11 +177,10 @@
               </button>
             </form>
             <div class="sosmed fs-1 justify-content-center mt-5">
-              <a href="https://api.whatsapp.com/send?phone=0895366044926"><i class="bi bi-whatsapp text-success mb-3"></i></a>
-              <a href="https://instagram.com/fuadriyadhi7"><i class="bi bi-instagram text-danger mb-3"></i></a>
-              <a href="https://facebook.com/Fuad Riyadhi"><i class="bi bi-facebook mb-3"></i></a>
-              <a href="https://twitter.com/riyadhi_fuad"><i class="bi bi-twitter text-info mb-3"></i></a>
-              <a href="https://github.com/tech-afk"><i class="bi bi-github text-dark mb-3"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=0895366044926" target="_blank"><i class="bi bi-whatsapp text-success mb-3"></i></a>
+              <a href="https://instagram.com/fuadriyadhi7" target="_blank"><i class="bi bi-instagram text-danger mb-3"></i></a>
+              <a href="https://twitter.com/riyadhi_fuad" target="_blank"><i class="bi bi-twitter text-info mb-3"></i></a>
+              <a href="https://github.com/fuadriyadhi" target="_blank"><i class="bi bi-github text-dark mb-3"></i></a>
             </div>
           </div>
         </div>
@@ -209,37 +208,6 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbwIPgfGoIULzxXIYE2GbOQQ4SAxNHkZkzcTYp3UubYz8L-Q1lwebAHrDDlrlV-3CGpB/exec";
-      const form = document.forms["submit-to-google-sheet"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const btnLoading = document.querySelector(".btn-loading");
-      const myAlert = document.querySelector(".my-alert");
-      const warn = document.querySelector(".warn");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let name = e.target.name.value;
-        if (name == "") {
-          warn.classList.toggle("d-none");
-          return;
-        }
-        //ketika tombol submit diklik
-        //tampilkan tombol loading, hilangkan tombol kirim
-        btnLoading.classList.toggle("d-none");
-        btnKirim.classList.toggle("d-none");
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            //kebalikan
-            btnLoading.classList.toggle("d-none");
-            btnKirim.classList.toggle("d-none");
-            //show allert
-            myAlert.classList.toggle("d-none");
-            //reset form
-            form.reset();
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
