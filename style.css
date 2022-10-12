@@ -28,6 +28,11 @@ section {
   margin-right: auto;
 }
 
+span {
+  color: #fb923c;
+  font-weight: bold;
+}
+
 /* .inp {
   margin-bottom: 0rem;
 } */
